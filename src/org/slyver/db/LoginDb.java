@@ -7,9 +7,7 @@ package org.slyver.db;
 
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import static org.slyver.db.database.rs;
-import static org.slyver.db.database.sql;
-import static org.slyver.db.database.statement;
+import static org.slyver.db.database.*;
 import org.slyver.ui.login;
 
 /**
@@ -25,8 +23,6 @@ public class LoginDb {
     
     public void UserLogin() throws SQLException, ClassNotFoundException {
         
-        new database();
-        
         String user = login.user.getText();
         char[] input = login.pass.getPassword();
         String s= new String(input);
@@ -35,7 +31,7 @@ public class LoginDb {
         
         System.out.println(sql);
         
-        rs = statement.executeQuery(sql); 
+        rs = stApp.executeQuery(sql); 
         
         if (!rs.isBeforeFirst() ) {    
             JOptionPane.showMessageDialog(null, "El usuario o contraseña es incorrecto.", "Mensaje", JOptionPane.INFORMATION_MESSAGE); 
