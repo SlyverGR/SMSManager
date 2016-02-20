@@ -26,7 +26,7 @@ public class database {
     public database() throws SQLException, ClassNotFoundException {
         
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        database = DriverManager.getConnection("jdbc:sqlserver://128.128.0.18\\PANACEASERVER:1433;databaseName=Ci", "sa", "P@n@2013");
+        database = DriverManager.getConnection("jdbc:sqlserver://xxxx\\xxxx:1433;databaseName=xx", "xxx", "xxx");
         statement = database.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE); 
         
     }
