@@ -5,6 +5,7 @@
  */
 package org.slyver.db;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import static org.slyver.db.database.*;
@@ -23,11 +24,14 @@ public class LoginDb {
     
     public void UserLogin() throws SQLException, ClassNotFoundException {
         
+
         String user = login.user.getText();
         char[] input = login.pass.getPassword();
         String s= new String(input);
         
         sql = "SELECT ID, NIVEL FROM USERS WHERE USUARIO = '"+user+"' AND CONTRASENA = '"+s+"'";
+        
+        stApp = dbApp.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
         
         System.out.println(sql);
         
