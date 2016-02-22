@@ -27,7 +27,7 @@ public class LoginDb {
         char[] input = login.pass.getPassword();
         String s= new String(input);
         
-        sql = "SELECT ID, ID_EMPRESA, NIVEL, GRUPO_ID FROM GEN_USERS WHERE USUARIO = '"+user+"' AND CONTRASENA = '"+s+"'";
+        sql = "SELECT ID, NIVEL FROM USERS WHERE USUARIO = '"+user+"' AND CONTRASENA = '"+s+"'";
         
         System.out.println(sql);
         
@@ -40,9 +40,7 @@ public class LoginDb {
         
         while(rs.next()){
             userid = rs.getInt(1);
-            useremp = rs.getInt(2);
-            userlvl = rs.getInt(3);
-            usergrp = rs.getInt(4);
+            userlvl = rs.getInt(2);
         }
         
         if(userid != 0 && userlvl != 0){
