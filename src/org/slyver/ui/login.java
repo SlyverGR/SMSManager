@@ -8,7 +8,7 @@ package org.slyver.ui;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.slyver.db.LoginDb;
+import org.slyver.db.database;
 
 /**
  *
@@ -21,6 +21,7 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+        
     }
 
     /**
@@ -124,7 +125,7 @@ public class login extends javax.swing.JFrame {
     private void loginbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbotonActionPerformed
         try {
             // TODO add your handling code here:
-            LoginDb loginproc = new LoginDb();
+            database loginproc = new database();
             loginproc.UserLogin();
             this.setVisible(false);
             
